@@ -1,6 +1,6 @@
 {
   "name": "@cotarr/collab-iot-client-token",
-  "version": "1.0.0-dev",
+  "version": "1.0.0",
   "type": "commonjs",
   "engines": {
     "node": ">=18"
@@ -16,7 +16,7 @@
     "url": "git+https://github.com/cotarr/collab-iot-client-token.git"
   },
   "keywords": [
-    "oauth2"
+    "oauth2-client"
   ],
   "author": "Dave Bolenbaugh",
   "license": "MIT",
@@ -24,6 +24,8 @@
     "url": "https://github.com/cotarr/collab-iot-client-token/issues"
   },
   "homepage": "https://github.com/cotarr/collab-iot-client-token#readme",
+  "dependencies": {
+  },
   "devDependencies": {
     "eslint": "^8.44.0",
     "eslint-config-standard": "^17.1.0",

@@ -72,11 +72,11 @@ Care should be taken to avoid disclosure of the client credentials.
 
 AuthInit options properties:
 
-| Property      | Type                      | Example                  | Need     | Comments                   |
-| ------------- | ------------------------- | ------------------------ | -------- | -------------------------- |
-| authURL       | string                    | "http://127.0.0.1:3500"  | required | Authorization Server URL   |
-| clientId      | string                    | "abc123"                 | required | Client account credentials |
-| clientSecret  | string                    | "ssh-secret"             | required | Client account credentials |
+| Property      | Type                       | Example                  | Need     | Comments                   |
+| ------------- | -------------------------- | ------------------------ | -------- | -------------------------- |
+| authURL       | string                     | "http://127.0.0.1:3500"  | required | Authorization Server URL   |
+| clientId      | string                     | "abc123"                 | required | Client account credentials |
+| clientSecret  | string                     | "ssh-secret"             | required | Client account credentials |
 | requestScope  | string OR array of strings | ["api.read, "api.write"] | required | Scopes for token request   |
 
 Example
@@ -188,6 +188,7 @@ chain {
   }
 }
 ```
+
 4. The `getClientToken(chain)` is called a second time with the chain object as an argument. The getClientToken detects the forceNewToken flag, ignores the previously cached token. A new access token fetched from the authorization server. 
 
 ```json
@@ -200,6 +201,7 @@ chain {
     cached: false
   }
 }
+
 ```
 5. The REST API submission function is retried a second time and succeeds.
 
@@ -209,7 +211,6 @@ As the promise chain executes through the second retry steps, the
 getClientToken(chain) function returns immediately without any actions.
 Similarly, the function to submit data to the REST API will run twice, so 
 it should have similar inhibit flags to abort the second REST API submission.
-
 
 ```json
 chain {
