@@ -1,0 +1,34 @@
+{
+  "name": "@cotarr/collab-iot-client-token",
+  "version": "1.0.0-dev",
+  "type": "commonjs",
+  "engines": {
+    "node": ">=18"
+  },
+  "description": "IOT device client credentials grant for collab-auth learning project.",
+  "main": "src/index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "lint": "npx eslint src"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/cotarr/collab-iot-client-token.git"
+  },
+  "keywords": [
+    "oauth2"
+  ],
+  "author": "Dave Bolenbaugh",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/cotarr/collab-iot-client-token/issues"
+  },
+  "homepage": "https://github.com/cotarr/collab-iot-client-token#readme",
+  "devDependencies": {
+    "eslint": "^8.44.0",
+    "eslint-config-standard": "^17.1.0",
+    "eslint-plugin-import": "^2.27.5",
+    "eslint-plugin-n": "^16.0.1",
+    "eslint-plugin-promise": "^6.1.1"
+  }
+}
