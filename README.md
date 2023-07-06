@@ -128,7 +128,7 @@ getClientToken()
 
 The promise would resolve to the following object.
 
-```json
+```
 {
   options: {},
   token: {
@@ -158,7 +158,7 @@ the chain of promise functions. The sequence would run as follows:
 
 1. An initial function would read the hardware device sensors. It would create an empty object and add a data property to the object.
 
-```json
+```
 chain {
   data: { ... }
 }
@@ -166,7 +166,7 @@ chain {
 
 2. The function `getClientToken(chain)` is called with the chain object as an argument. In this case a cached token is retrieved from the cache and added to the chain object.
 
-```json
+```
 chain {
   data: { ... },
   token: {
@@ -179,7 +179,7 @@ chain {
 
 3. A REST API submission function is called with the chain object as an argument to perform the HTTP submission request using the cached token. The HTTP request fails with 401 Unauthorized. Since the token is cached and failed with 401, it is eligible for a retry. The forceNewToken options property is added to the chain object and set to true. The promise resolves to the chain object.
 
-```json
+```
 chain {
   data: { ... },
   token: { ... },
@@ -191,7 +191,7 @@ chain {
 
 4. The `getClientToken(chain)` is called a second time with the chain object as an argument. The getClientToken detects the forceNewToken flag, ignores the previously cached token. A new access token fetched from the authorization server. 
 
-```json
+```
 chain {
   data: { ... },
   options: { ... },
@@ -212,7 +212,7 @@ getClientToken(chain) function returns immediately without any actions.
 Similarly, the function to submit data to the REST API will run twice, so 
 it should have similar inhibit flags to abort the second REST API submission.
 
-```json
+```
 chain {
   data: { ... },
   token: { ... },
